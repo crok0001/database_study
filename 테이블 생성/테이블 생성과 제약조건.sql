@@ -87,3 +87,7 @@ SELECT * FROM users;
 -- UNIQUE 제약 조건은 Null을 허용, Null이 중복되는 것은 허용
 INSERT INTO `test_db`.`users` (`user_id`, `usetname`) VALUES ('2', '임꺽정');
 INSERT INTO `test_db`.`users` (`user_id`, `usetname`) VALUES ('3', '전우치');
+
+-- UNIQUE 제약조건이 있는 속성(컬럼)에 같은 값이 들어갈 경우 제약조건 위반
+INSERT INTO `test_db`.`users` (`user_id`, `username`, `email`) VALUES ('1', '홍길동', 'hong@abc.com');
+INSERT INTO `test_db`.`users` (`user_id`, `username`, `email`) VALUES ('4', '홍진호', 'hong@abc.com');
